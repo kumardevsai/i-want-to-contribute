@@ -1,6 +1,6 @@
 const githubHelpers = require('./utils/githubHelper');
 
-module.exports = function(app){
+export default (app) => {
   app.get('/status', function(req, res) {
     res.send("ok");
   });
