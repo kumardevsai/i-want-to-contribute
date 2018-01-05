@@ -19,10 +19,11 @@ routes(App);
 
 if (process.env.REACT_APP_BUNDLED_DEPLOY === 'true') {
   console.log("Bundling express server and static assets together");
-  App.use(express.static(path.resolve(__dirname, '../..', 'build')));
+  // The following paths assume that the app is being served from dist/
+  App.use(express.static(path.resolve(__dirname, '..', 'build')));
   // Always return the main index.html, so react-router render the route in the client
   App.get('*', (req, res) => {
-    res.sendFile(path.resolve(__dirname, '../..', 'build', 'index.html'));
+    res.sendFile(path.resolve(__dirname, '..', 'build', 'index.html'));
   });
 }
 

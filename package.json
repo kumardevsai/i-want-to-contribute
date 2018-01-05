@@ -50,7 +50,7 @@
   "scripts": {
     "start": "nf start -j Procfile.dev",
     "start-ui": "PORT=3000 react-scripts start",
-    "start-backend": "nodemon src/server/index.js --exec babel-node --presets es2015,stage-1",
+    "start-backend": "nodemon src/server/index.js --exec babel-node",
     "build": "react-scripts build",
     "build-backend": "babel src/server -d dist",
     "serve-backend": "node dist/index.js",
